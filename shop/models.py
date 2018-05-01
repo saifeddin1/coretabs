@@ -19,7 +19,7 @@ class Product(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.id:
 			self.slug = slugify(self.name)
-			super().save(*args, **kwargs)
+		super().save(*args, **kwargs)
 
 		
 	class Meta():
@@ -38,7 +38,7 @@ class Category(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.id:
 			self.slug = slugify(self.name)
-			super().save(*args, **kwargs)
+		super().save(*args, **kwargs)
 
 	class Meta():
 		ordering = ('name', )

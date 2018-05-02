@@ -9,7 +9,7 @@ def make_price_zero(modeladmin, request, queryset):
     queryset.update(price=0)
 make_price_zero.short_description = "Make selected products free"
 
-def discount(self, request, queryset):
+def discount(modeladmin, request, queryset):
     for product in queryset:
         product.price = product.price * decimal.Decimal('0.8')
         product.save()
